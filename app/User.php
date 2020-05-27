@@ -38,19 +38,19 @@ class User extends Authenticatable
     ];
 
     public function infoUser() {
-		return $this ->hasOne('App/InfoUser');
+		return $this ->hasOne('App\InfoUser');
 	}
 
     public function categories() {
-		return $this ->hasMany('App/Category');
+		return $this ->hasMany('App\Category');
 	}
 
     public function pages() {
-		return $this ->hasMany('App/Page');
+		return $this ->hasMany('App\Page');
 	}
 
     public function tags() {
-		return $this ->hasMany('App/Tag');
+		return $this ->hasMany('App\Tag');
 	}
 
     public function photos()

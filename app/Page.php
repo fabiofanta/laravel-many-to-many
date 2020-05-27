@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Page extends Model
 {
 	protected $fillable = [
-        'used_id',
+        'user_id',
 		'category_id',
 		'title',
 		'summary',
@@ -17,22 +17,22 @@ class Page extends Model
 
 	public function user() {
 
-		return $this ->belongsTo('App/User')
+		return $this ->belongsTo('App/User');
 	}
 
 	public function category() {
 
-		return $this ->belongsTo('App/Category')
+		return $this ->belongsTo('App/Category');
 	}
 
 	public function photos() {
 
-		return $this ->belongsToMany('App/Photo')
+		return $this ->belongsToMany('App/Photo');
 	}
 
 	public function tags() {
 
-		return $this ->belongsToMany('App/Tag')
+		return $this ->belongsToMany('App/Tag');
 	}
 
 }

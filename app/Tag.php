@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
 	protected $fillable = [
-        'used_id',
+        'user_id',
 		'name'
     ];
 
 	public function user() {
-		return $this ->belongsTo('App/User')
+		return $this ->belongsTo('App/User');
 	}
 
 	public function pages() {
-		return $this ->belongsToMany('App/Page')
+		return $this ->belongsToMany('App/Page');
 	}
 }

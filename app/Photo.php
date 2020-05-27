@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Photo extends Model
 {
 	protected $fillable = [
-        'used_id',
+        'user_id',
 		'name',
 		'path',
 		'description',
     ];
 
 	public function pages() {
-		return $this ->belongsToMany('App/Page')
+		return $this ->belongsToMany('App/Page');
 	}
 
 	public function user()
