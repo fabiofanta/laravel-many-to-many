@@ -13,8 +13,13 @@ class CreateInfoUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('info_user', function (Blueprint $table) {
-            $table->id();
+        Schema::create('info_users', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained();
+            $table->text('bio');
+            $table->string('linkedin')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('facebook')->nullable();
+            $table->text('path_photo');
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateInfoUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('info_user');
+        Schema::dropIfExists('info_users');
     }
 }
