@@ -15,6 +15,12 @@ class CreatePagesTable extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('category_id')->constrained();
+            $table->string('title',200);
+            $table->text('summary')->nullable();
+            $table->text('body');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

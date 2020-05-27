@@ -14,7 +14,8 @@ class CreatePagePhotoTable extends Migration
     public function up()
     {
         Schema::create('page_photo', function (Blueprint $table) {
-            $table->id();
+            $table->foreignId('page_id')->constrained();
+            $table->foreignId('photo_id')->constrained();
             $table->timestamps();
         });
     }

@@ -14,7 +14,8 @@ class CreatePageTagTable extends Migration
     public function up()
     {
         Schema::create('page_tag', function (Blueprint $table) {
-            $table->id();
+            $table->foreignId('page_id')->constrained();
+            $table->foreignId('tag_id')->constrained();
             $table->timestamps();
         });
     }
